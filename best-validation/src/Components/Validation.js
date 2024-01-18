@@ -85,86 +85,92 @@ const Validation = () => {
       console.log(AllData);
       return (
             <div>
-                  <form className='' method='post' onSubmit={(e) => SubmitData(e)}>
-                        <div>
-                              <label>name : </label>
-                              <input type="text" className='border-2 border-black' placeholder='name' name='name' value={InputValue.name ? InputValue.name : ''} onChange={(e) => ValueInputData(e)} />
-                              <span>{InputValueError.nameError ? InputValueError.nameError : ''}</span>
-                        </div>
-                        <div>
-                              <label>age : </label>
-                              <input type="text" className='border-2 border-black' placeholder='age' name='age' onChange={(e) => ValueInputData(e)} value={InputValue.age ? InputValue.age : ''} />
-                              <span>{InputValueError.ageError ? InputValueError.ageError : ''}</span>
-                        </div>
-                        <div>
-                              <label>email : </label>
-                              <input type="text" className='border-2 border-black' placeholder='email' name='email' onChange={(e) => ValueInputData(e)} value={InputValue.email ? InputValue.email : ''} />
-                        </div>
-                        <div>
-                              <label>password : </label>
-                              <input type="text" className='border-2 border-black' placeholder='password' name='password' onChange={(e) => ValueInputData(e)} value={InputValue.password ? InputValue.password : ''} />
-                              <span>{InputValueError.passwordError ? InputValueError.passwordError : ''}</span>
-                        </div>
-                        {/* <div>
-                              <label>city : </label>
-                              <select name="city" className='border-2 border-black' onChange={(e) => ValueInputData(e)} value={InputValue.name ? InputValue.name : ''}>
-                                    <option value="surat">surat</option>
-                                    <option value="amgi">amgi</option>
-                                    <option value="amrli">amrli</option>
-                              </select>
-                        </div> */}
-                        <div>
-                              <label>male</label>
-                              <input type="radio" name='gender' value='male' onChange={(e) => ValueInputData(e)} />
-                              <label>female</label>
-                              <input type="radio" name='gender' value='female' onChange={(e) => ValueInputData(e)} />
-                              <label>other</label>
-                              <input type="radio" name='gender' value='other' onChange={(e) => ValueInputData(e)} />
-                        </div>
-                        <div>
-                              <input type="checkbox" name='hobbies' value='one' onChange={(e) => ValueInputData(e)} />
-                              <label htmlFor="">one</label>
-                              <input type="checkbox" name='hobbies' value='two' onChange={(e) => ValueInputData(e)} />
-                              <label htmlFor="">one</label>
-                              <input type="checkbox" name='hobbies' value='three' onChange={(e) => ValueInputData(e)} />
-                              <label htmlFor="">one</label>
-                        </div>
+                  <div className='w-1/3 mx-auto mt-12 capitalize'>
+                        <form method='post' onSubmit={(e) => SubmitData(e)} >
+                              <div className='flex flex-col my-6'>
+                                    <label>name : </label>
+                                    <input type="text" className='border-2 py-2 rounded-lg px-4 my-1 border-black' placeholder='name' name='name' value={InputValue.name ? InputValue.name : ''} onChange={(e) => ValueInputData(e)} />
+                                    <span>{InputValueError.nameError ? InputValueError.nameError : ''}</span>
+                              </div>
+                              <div className='flex flex-col my-6'>
+                                    <label>age : </label>
+                                    <input type="text" className='border-2 py-2 rounded-lg px-4 my-1 border-black' placeholder='age' name='age' onChange={(e) => ValueInputData(e)} value={InputValue.age ? InputValue.age : ''} />
+                                    <span>{InputValueError.ageError ? InputValueError.ageError : ''}</span>
+                              </div>
+                              <div className='flex flex-col my-6'>
+                                    <label>email : </label>
+                                    <input type="text" className='border-2 py-2 rounded-lg px-4 my-1 border-black' placeholder='email' name='email' onChange={(e) => ValueInputData(e)} value={InputValue.email ? InputValue.email : ''} />
+                              </div>
+                              <div className='flex flex-col my-6'>
+                                    <label>password : </label>
+                                    <input type="text" className='border-2 py-2 rounded-lg px-4 my-1 border-black' placeholder='password' name='password' onChange={(e) => ValueInputData(e)} value={InputValue.password ? InputValue.password : ''} />
+                                    <span>{InputValueError.passwordError ? InputValueError.passwordError : ''}</span>
+                              </div>
+                              <div className='w-1/4'>
+                                    <div className='flex justify-between my-2'>
+                                          <label>male</label>
+                                          <input type="radio" name='gender' value='male' onChange={(e) => ValueInputData(e)} />
+                                    </div>
+                                    <div className='flex justify-between my-2  '>
+                                          <label>female</label>
+                                          <input type="radio" name='gender' value='female' onChange={(e) => ValueInputData(e)} />
+                                    </div>
+                                    <div className='flex justify-between my-2  '>
+                                          <label>other</label>
+                                          <input type="radio" name='gender' value='other' onChange={(e) => ValueInputData(e)} />
 
-                        <div>
-                              <input type="submit" value={'submit'} className='border bg-black text-white py-2 px-6 rounded-md mt-4' />
-                              <span>{InputValueError.Submiterror}</span>
+                                    </div>
+                              </div>
+                              <div className='w-1/4 py-6'>
+                                    <div className='flex my-2'>
+                                          <input type="checkbox" className='me-4' name='hobbies' value='Learning' onChange={(e) => ValueInputData(e)} />
+                                          <label htmlFor="">Learning</label>
+                                    </div>
+                                    <div className='flex my-2  '>
+                                          <input type="checkbox" className='me-4' name='hobbies' value='Video' onChange={(e) => ValueInputData(e)} />
+                                          <label htmlFor="">Video</label>
+                                    </div>
+                                    <div className='flex my-2  '>
+                                          <input type="checkbox" className='me-4' name='hobbies' value='Writing' onChange={(e) => ValueInputData(e)} />
+                                          <label htmlFor="">Writing</label>
+                                    </div>
+                                    <div className='flex my-2  '>
+                                          <input type="checkbox" className='me-4' name='hobbies' value='Painting' onChange={(e) => ValueInputData(e)} />
+                                          <label htmlFor="">Painting</label>
+                                    </div>
+                              </div>
+
+
+                              <div className='flex flex-col '>
+                                    <input type="submit" value={'submit'} className='border bg-black text-white py-2 px-6 rounded-md mt-4' />
+                                    <span>{InputValueError.Submiterror}</span>
+                              </div>
+                        </form>
+                  </div>
+                  <div className='mt-20 capitalize'>
+
+                        <div key={'123'} className='flex flex-wrap justify-between items-center py-6 border-2'>
+                              <div className='w-1/6 text-2xl font-semibold capitalize'>name</div>
+                              <div className='w-1/6 text-2xl font-semibold capitalize'>age</div>
+                              <div className='w-1/6 text-2xl font-semibold capitalize'>email</div>
+                              <div className='w-1/6 text-2xl font-semibold capitalize'>possword</div>
+                              <div className='w-1/6 text-2xl font-semibold capitalize'>gender</div>
+                              <div className='w-1/6 text-2xl font-semibold capitalize'>hobbies</div>
                         </div>
-                  </form>
-
-
-                  <div>
-                        <table>
-                              <thead>
-                                    <tr key={'123'}>
-                                          <th>name</th>
-                                          <th>age</th>
-                                          <th>email</th>
-                                          <th>possword</th>
-                                    </tr>
-                              </thead>
-                              <tbody>
-                                    {
-                                          AllData.map((item, i) => {
-                                                return (
-                                                      <tr key={i + 1}>
-                                                            <th>{item.name}</th>
-                                                            <th>{item.age}</th>
-                                                            <th>{item.email}</th>
-                                                            <th>{item.password}</th>
-                                                            <th>{item.gender}</th>
-                                                            <th>{item.hobbies}</th>
-                                                      </tr>
-                                                )
-                                          })
-                                    }
-                              </tbody>
-                        </table>
-
+                        {
+                              AllData.map((item, i) => {
+                                    return (
+                                          <div key={i + 1} className='flex flex-wrap justify-between items-center py-2 border-t-2 textlg'>
+                                                <div className='w-1/6 text-md'>{item.name}</div>
+                                                <div className='w-1/6 text-md'>{item.age}</div>
+                                                <div className='w-1/6 text-md'>{item.email}</div>
+                                                <div className='w-1/6 text-md'>{item.password}</div>
+                                                <div className='w-1/6 text-md'>{item.gender}</div>
+                                                <div className='w-1/6 text-md'>{item.hobbies.join(' , ')}</div>
+                                          </div>
+                                    )
+                              })
+                        }
                   </div>
                   <ToastContainer />
             </div>
